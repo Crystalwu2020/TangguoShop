@@ -1,12 +1,14 @@
 package org.example.controller;
 
 
+import com.atguigu.config.MybatisPlusConfig;
 import com.atguigu.result.RetVal;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.example.entity.PlatformPropertyKey;
 import org.example.entity.PlatformPropertyValue;
 import org.example.service.PlatformPropertyKeyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +23,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/product")
+@Import(MybatisPlusConfig.class)
 @CrossOrigin
 public class PlatformPropertyController {
     @Autowired
