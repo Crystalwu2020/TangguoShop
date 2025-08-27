@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.example.entity.PlatformPropertyKey;
 import org.example.entity.PlatformPropertyValue;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -16,4 +17,6 @@ import java.util.List;
 public interface PlatformPropertyValueService extends IService<PlatformPropertyValue> {
 
     List<PlatformPropertyValue> getPlatformValueList(Long category1Id, Long category2Id, Long category3Id);
+
+
 }

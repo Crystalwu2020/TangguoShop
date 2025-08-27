@@ -7,8 +7,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.example.entity.PlatformPropertyKey;
 import org.example.entity.PlatformPropertyValue;
 import org.example.service.PlatformPropertyKeyService;
+import org.example.service.PlatformPropertyValueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,7 +31,10 @@ public class PlatformPropertyController {
     @Autowired
     private PlatformPropertyKeyService platformPropertyKeyService;
 
-    @GetMapping("/getPlatformPropertyByCategoryId/{category1Id}/{category2Id}/{category3Id}")
+    @Autowired
+    private PlatformPropertyValueService platformPropertyValueService;
+
+/*    @GetMapping("/getPlatformPropertyByCategoryId/{category1Id}/{category2Id}/{category3Id}")
     public RetVal getPropertyValueList(@PathVariable Long category1Id,
                                        @PathVariable Long category2Id,
                                        @PathVariable Long category3Id
@@ -39,7 +44,40 @@ public class PlatformPropertyController {
         List<PlatformPropertyKey> platformPropertyKeyList = platformPropertyKeyService
                                           .getPlatformPropertyByCategoryId2(category1Id,category2Id,category3Id);
         return RetVal.ok(platformPropertyKeyList);
+    }*/
+
+
+    @GetMapping("/getPlatformPropertyByCategoryId/{category1Id}/{category2Id}/{category3Id}")
+    public RetVal getPropertyValueList(@PathVariable Long category1Id,
+                                       @PathVariable Long category2Id,
+                                       @PathVariable Long category3Id
+    ){
+
+
+        List<PlatformPropertyKey> platformPropertyKeyList = platformPropertyKeyService
+                .getPlatformPropertyByCategoryId(category1Id,category2Id,category3Id);
+        return RetVal.ok(platformPropertyKeyList);
     }
 
+
+     //2,根据平台属性keyId 查询属性值
+     @GetMapping("/getPlatformValueByKey/{platformKeyId}")
+     public RetVal getPropertyValueListByKey(@PathVariable Long platformKeyId){
+
+         LambdaQueryWrapper<PlatformPropertyValue> platformPropertyValueWrapper = new LambdaQueryWrapper<>();
+         platformPropertyValueWrapper.eq(PlatformPropertyValue::getPropertyKeyId,platformKeyId);
+         List<PlatformPropertyValue> platformPropertyValuelist = platformPropertyValueService.list(platformPropertyValueWrapper);
+         return RetVal.ok(platformPropertyValuelist);
+     }
+
+
+      //3,保存平台属性
+    //http://192.168.1.24:8810/product/savePlatformProperty
+     @PostMapping("/savePlatformProperty")
+     @Transactional(rollbackFor = Exception.class)
+     public RetVal savePlatformProperty(@RequestBody PlatformPropertyKey platformPropertyKey){
+        platformPropertyKeyService.savePlatformProperty(platformPropertyKey);
+         return RetVal.ok();
+     }
 }
 

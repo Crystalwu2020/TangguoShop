@@ -1,10 +1,12 @@
 package org.example.service.impl;
 
+import org.example.entity.PlatformPropertyKey;
 import org.example.entity.PlatformPropertyValue;
 import org.example.mapper.PlatformPropertyValueMapper;
 import org.example.service.PlatformPropertyValueService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,8 +21,11 @@ import java.util.List;
 @Service
 public class PlatformPropertyValueServiceImpl extends ServiceImpl<PlatformPropertyValueMapper, PlatformPropertyValue> implements PlatformPropertyValueService {
 
+
     @Override
     public List<PlatformPropertyValue> getPlatformValueList(Long category1Id, Long category2Id, Long category3Id) {
         return null;
     }
+
+
 }
