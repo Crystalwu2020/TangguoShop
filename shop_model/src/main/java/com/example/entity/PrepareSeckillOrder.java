@@ -1,6 +1,5 @@
-package com.atguigu.entity;
+package com.example.entity;
 
-import com.atguigu.entity.SeckillProduct;
 import lombok.Data;
 
 import java.io.Serializable;

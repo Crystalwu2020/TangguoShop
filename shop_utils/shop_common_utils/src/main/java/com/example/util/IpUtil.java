@@ -1,4 +1,4 @@
-package com.atguigu.util;
+package com.example.util;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;

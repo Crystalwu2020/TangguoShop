@@ -31,13 +31,13 @@ public class CodeGenerator {
         globalConfig.setIdType(IdType.ID_WORKER_STR);
         //定义生成的实体类中日期类型
         globalConfig.setDateType(DateType.ONLY_DATE);
-        //开启Swagger2模式
+        //开启Swagger2模式00
         globalConfig.setSwagger2(true);
         autoGenerator.setGlobalConfig(globalConfig);
 
         // 3、数据源配置
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setUrl("jdbc:mysql://192.168.1.24:3306/shop_product?serverTimezone=GMT%2B8");
+        dataSourceConfig.setUrl("jdbc:mysql://192.168.121.128:3306/shop_product?serverTimezone=GMT%2B8");
         dataSourceConfig.setDriverName("com.mysql.jdbc.Driver");
         dataSourceConfig.setUsername("root");
         dataSourceConfig.setPassword("root");
@@ -56,11 +56,11 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-//        strategy.setInclude("base_brand");
+       // strategy.setInclude("base_brand");
 //        strategy.setInclude("base_category1","base_category2","base_category3","platform_property_key","platform_property_value");
    //    strategy.setInclude("base_category1","base_category2","base_category3");
-        strategy.setInclude("platform_property_key","platform_property_value");
-//        strategy.setInclude("product_spu","product_sale_property_key","product_sale_property_value","product_image","base_sale_property");
+   //     strategy.setInclude("platform_property_key","platform_property_value");
+       strategy.setInclude("product_spu","product_sale_property_key","product_sale_property_value","product_image","base_sale_property");
         //strategy.setInclude();
 //        strategy.setInclude("sku_info","sku_platform_property_value","sku_sale_property_value","sku_image");
 //        strategy.setInclude("base_category_view");

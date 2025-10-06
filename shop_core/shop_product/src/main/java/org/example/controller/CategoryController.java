@@ -1,16 +1,16 @@
 package org.example.controller;
 
 
-import com.atguigu.result.RetVal;
+import com.example.result.RetVal;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.example.entity.BaseCategory1;
 import org.example.entity.BaseCategory2;
 import org.example.entity.BaseCategory3;
 import org.example.service.BaseCategory1Service;
 import org.example.service.BaseCategory2Service;
 import org.example.service.BaseCategory3Service;
-import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +37,8 @@ public class CategoryController {
     @Autowired
     private BaseCategory3Service baseCategory3Service;
 
+    private static final Logger logger = LoggerFactory.getLogger(CategoryController.class);
+
     @GetMapping("/getCategory1")
     public RetVal getCategory1(){
         List<BaseCategory1> listCategory1 = baseCategory1Service.list(null);
@@ -61,7 +63,10 @@ public class CategoryController {
         baseCategory3Wrapper.eq(BaseCategory3::getCategory2Id,category2Id);
         List<BaseCategory3> baseCategory3List = baseCategory3Service.list(baseCategory3Wrapper);
         System.out.println("baseCategory3List = " + baseCategory3List);
+        System.out.println("执行。。。。 ");
        return RetVal.ok(baseCategory3List);
     }
+
+
 }
 

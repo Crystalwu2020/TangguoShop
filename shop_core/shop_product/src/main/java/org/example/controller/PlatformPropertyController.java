@@ -1,13 +1,15 @@
 package org.example.controller;
 
 
-import com.atguigu.config.MybatisPlusConfig;
-import com.atguigu.result.RetVal;
+import com.example.config.MybatisPlusConfig;
+import com.example.result.RetVal;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.example.entity.PlatformPropertyKey;
 import org.example.entity.PlatformPropertyValue;
 import org.example.service.PlatformPropertyKeyService;
 import org.example.service.PlatformPropertyValueService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +36,9 @@ public class PlatformPropertyController {
     @Autowired
     private PlatformPropertyValueService platformPropertyValueService;
 
-/*    @GetMapping("/getPlatformPropertyByCategoryId/{category1Id}/{category2Id}/{category3Id}")
+    private static final Logger logger = LoggerFactory.getLogger(PlatformPropertyController.class);
+
+/*   @GetMapping("/getPlatformPropertyByCategoryId/{category1Id}/{category2Id}/{category3Id}")
     public RetVal getPropertyValueList(@PathVariable Long category1Id,
                                        @PathVariable Long category2Id,
                                        @PathVariable Long category3Id
@@ -56,6 +60,7 @@ public class PlatformPropertyController {
 
         List<PlatformPropertyKey> platformPropertyKeyList = platformPropertyKeyService
                 .getPlatformPropertyByCategoryId(category1Id,category2Id,category3Id);
+           logger.info(""+platformPropertyKeyList.toString());
         return RetVal.ok(platformPropertyKeyList);
     }
 
@@ -73,6 +78,8 @@ public class PlatformPropertyController {
 
       //3,保存平台属性
     //http://192.168.1.24:8810/product/savePlatformProperty
+    //1，保存平台属性key
+    //2，保存平台属性value
      @PostMapping("/savePlatformProperty")
      @Transactional(rollbackFor = Exception.class)
      public RetVal savePlatformProperty(@RequestBody PlatformPropertyKey platformPropertyKey){

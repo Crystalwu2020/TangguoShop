@@ -1,4 +1,4 @@
-package com.atguigu.entity;
+package com.example.entity;
 
 import lombok.Data;
 

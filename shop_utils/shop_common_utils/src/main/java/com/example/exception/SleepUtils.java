@@ -1,4 +1,4 @@
-package com.atguigu.exception;
+package com.example.exception;
 
 public class SleepUtils {
     public static void sleep(int second) {

@@ -1,4 +1,4 @@
-package com.atguigu.constant;
+package com.example.constant;
 
 public class MqConst {
     /**

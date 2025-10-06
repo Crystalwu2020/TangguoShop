@@ -1,4 +1,4 @@
-package com.atguigu.enums;
+package com.example.enums;
 
 public enum PaymentType {
     ALIPAY("支付宝"),

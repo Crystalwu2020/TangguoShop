@@ -1,4 +1,4 @@
-package com.atguigu.result;
+package com.example.result;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

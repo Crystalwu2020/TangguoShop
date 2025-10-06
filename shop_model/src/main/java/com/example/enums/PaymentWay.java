@@ -1,4 +1,4 @@
-package com.atguigu.enums;
+package com.example.enums;
 
 public enum PaymentWay {
     ONLINE("在线支付"),

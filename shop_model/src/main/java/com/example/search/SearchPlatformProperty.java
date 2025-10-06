@@ -1,4 +1,4 @@
-package com.atguigu.search;
+package com.example.search;
 
 import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Field;

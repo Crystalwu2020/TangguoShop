@@ -1,7 +1,7 @@
-package com.atguigu.handler;
+package com.example.handler;
 
-import com.atguigu.exception.GmallException;
-import com.atguigu.result.RetVal;
+import com.example.exception.GmallException;
+import com.example.result.RetVal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

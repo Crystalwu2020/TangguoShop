@@ -1,6 +1,6 @@
-package com.atguigu.exception;
+package com.example.exception;
 
-import com.atguigu.result.RetValCodeEnum;
+import com.example.result.RetValCodeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

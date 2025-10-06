@@ -12,6 +12,7 @@
         <module>shop_model</module>
         <module>shop_core</module>
         <module>shop_mbg</module>
+        <module>shop_gateway</module>
     </modules>
 
 
@@ -107,6 +108,17 @@
                 <groupId>org.apache.shardingsphere</groupId>
                 <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
                 <version>${shardingsphere.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.20.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.20.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,16 +1,14 @@
 package org.example.service.impl;
 
-import com.atguigu.result.RetVal;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.example.entity.PlatformPropertyKey;
 import org.example.entity.PlatformPropertyValue;
 import org.example.mapper.PlatformPropertyKeyMapper;
-import org.example.mapper.PlatformPropertyValueMapper;
 import org.example.service.PlatformPropertyKeyService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.example.service.PlatformPropertyValueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -54,6 +52,8 @@ public class PlatformPropertyKeyServiceImpl extends ServiceImpl<PlatformProperty
         return baseMapper.getPropertyByCategoryId(category1Id, category2Id, category3Id);
     }
 
+
+    @Transactional
     @Override
     public void savePlatformProperty(PlatformPropertyKey platformPropertyKey) {
 

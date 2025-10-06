@@ -1,4 +1,4 @@
-package com.atguigu.enums;
+package com.example.enums;
 
 public enum ProcessStatus {
     UNPAID("未支付", OrderStatus.UNPAID),

@@ -1,4 +1,4 @@
-package com.atguigu.config;
+package com.example.config;
 
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;

@@ -1,4 +1,4 @@
-package com.atguigu.util;
+package com.example.util;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;

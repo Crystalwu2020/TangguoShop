@@ -1,4 +1,4 @@
-package com.atguigu.util;
+package com.example.util;
 
 //import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 
