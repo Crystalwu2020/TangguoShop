@@ -5,16 +5,21 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/shop_utils/shop_common_utils/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/shop_utils/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_core/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_core/shop_product/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_mbg/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_model/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_utils/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_utils/shop_common_utils/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_utils/shop_core_utils/pom.xml" />
+        <option value="$PROJECT_DIR$/shop_utils/shop_web_utils/pom.xml" />
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

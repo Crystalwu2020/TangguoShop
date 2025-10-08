@@ -2,4 +2,36 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.mapper.ProductSalePropertyKeyMapper">
 
+<!--    <select id="selectInnerSalePropertyValue" resultType="org.example.entity.ProductSaleValueVo">
+        SELECT a.product_id,a.sale_property_key_name,
+               b.sale_property_value_name
+        FROM `product_sale_property_key` a
+                 inner join product_sale_property_value b
+                            on a.product_id=b.product_id
+                                and a.sale_property_key_id=b.sale_property_key_id;
+    </select>-->
+    <resultMap id="salePropertyMap" type="com.example.entity.ProductSalePropertyKey" autoMapping="true">
+        <id property="id" column="id"></id>>
+        <collection property="salePropertyValueList" ofType="com.example.entity.ProductSalePropertyValue" autoMapping="true">
+            <id property="id" column="sale_property_value_id"></id>>
+        </collection>>
+    </resultMap>
+
+    <select id="querySalePropertyByProductId" resultMap="salePropertyMap">
+        SELECT
+            a.id,
+            a.product_id,
+            a.sale_property_key_id,
+            a.sale_property_key_name,
+            b.sale_property_key_id,
+            b.sale_property_value_name
+        FROM `product_sale_property_key` a
+                 inner join product_sale_property_value b
+                            on a.product_id=b.product_id
+                                and a.sale_property_key_id=b.sale_property_key_id
+        where
+            a.product_id=#{spuId}
+
+
+    </select>
 </mapper>

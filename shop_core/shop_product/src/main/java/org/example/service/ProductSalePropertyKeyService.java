@@ -2,6 +2,9 @@ package org.example.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.entity.ProductSalePropertyKey;
+import org.example.entity.ProductSaleValueVo;
+
+import java.util.List;
 
 
 /**
@@ -14,4 +17,5 @@ import com.example.entity.ProductSalePropertyKey;
  */
 public interface ProductSalePropertyKeyService extends IService<ProductSalePropertyKey> {
 
+  /*public  List<ProductSaleValueVo>  selectInnerSalePropertyValue();*/
 }

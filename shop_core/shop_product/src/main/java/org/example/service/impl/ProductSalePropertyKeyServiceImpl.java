@@ -2,10 +2,14 @@ package org.example.service.impl;
 
 
 import com.example.entity.ProductSalePropertyKey;
+import org.example.entity.ProductSaleValueVo;
 import org.example.mapper.ProductSalePropertyKeyMapper;
 import org.example.service.ProductSalePropertyKeyService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -18,4 +22,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductSalePropertyKeyServiceImpl extends ServiceImpl<ProductSalePropertyKeyMapper, ProductSalePropertyKey> implements ProductSalePropertyKeyService {
 
+/*
+    @Autowired
+    ProductSalePropertyKeyMapper productSalePropertyKeyMapper;
+    @Override
+    public List<ProductSaleValueVo> selectInnerSalePropertyValue() {
+    return   productSalePropertyKeyMapper.selectInnerSalePropertyValue();
+*/
+
 }
+
